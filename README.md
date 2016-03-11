@@ -1,0 +1,2 @@
+# RegisterHotkey
+學習win32的RegisterHotkey與控制視窗的結合

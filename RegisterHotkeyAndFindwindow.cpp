@@ -5,25 +5,24 @@
 #include "ConsoleApplication18.h"
 #include <Windows.h>
 #include <time.h>
-#pragma comment(lib, "user32.lib")
 using namespace std;
 
 int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 {
-	enum{keyid = 1}; //³Ğ«ØidÅÜ¼Æ(int¦n¹³¤]¦æ
+	enum{keyid = 1}; //å‰µå»ºidè®Šæ•¸(intå¥½åƒä¹Ÿè¡Œ
 	HWND h; //h = HANDLE
-	RegisterHotKey(0, keyid, MOD_ALT, 0x5A); //µù¥U¼öÁäALT+Z
+	RegisterHotKey(0, keyid, MOD_ALT, 0x5A); //è¨»å†Šç†±éµALT+Z
 	MSG msg;
-	while (GetMessage(&msg, 0, 0, 0)){ //ÄdºI¼öÁäMASSAGE
-		PeekMessage(&msg, 0, 0, 0, 0x0001); //ÀË¬d¬y¸gªºMASSAGE
+	while (GetMessage(&msg, 0, 0, 0)){ //æ””æˆªç†±éµMASSAGE
+		PeekMessage(&msg, 0, 0, 0, 0x0001); //æª¢æŸ¥æµç¶“çš„MASSAGE
 		switch(msg.message){
 		case WM_HOTKEY:
-			if (msg.wParam == keyid){  //­Y¬y¸gMASSAGEªºID¬°³]©w¼öÁäªºID«h°õ¦æ¨Æ¥ó
-				h = FindWindow(NULL, _T("WWE 2K15")); //FINDWINDOW¨ç¦¡ ¦¹³B¥HWWE 2K15¬°¨Ò
-				if (h){ //¦pªGWWE 2K15°õ¦æ¤¤
-					SendMessage(h, WM_CLOSE, 0, 0); //±H¤@­Óµ²§ô«ü¥Oµ¹¸Óµøµ¡
-					Sleep(300);
-					system("start C:\\Users\\Mcgodamn0\\Desktop\\game\\WWE2K15Launcher.exe.lnk"); //­«±ÒWWE 2K15(§Ú¦Û¤vªº»İ¨D
+			if (msg.wParam == keyid){  //è‹¥æµç¶“MASSAGEçš„IDç‚ºè¨­å®šç†±éµçš„IDå‰‡åŸ·è¡Œäº‹ä»¶
+				h = FindWindow(NULL, _T("WWE 2K15")); //FINDWINDOWå‡½å¼ æ­¤è™•ä»¥WWE 2K15ç‚ºä¾‹
+				if (h){ //å¦‚æœWWE 2K15åŸ·è¡Œä¸­
+					SendMessage(h, WM_CLOSE, 0, 0); //å¯„ä¸€å€‹çµæŸæŒ‡ä»¤çµ¦è©²è¦–çª—
+					Sleep(300); //ç­‰å€™è¦–çª—çµæŸ
+					system("start C:\\Users\\Mcgodamn0\\Desktop\\game\\WWE2K15Launcher.exe.lnk"); //é‡å•ŸWWE 2K15(æˆ‘è‡ªå·±çš„éœ€æ±‚
 				}
 				else system("start C:\\Users\\Mcgodamn0\\Desktop\\game\\WWE2K15Launcher.exe.lnk");
 

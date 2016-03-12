@@ -1,2 +1,3 @@
 # RegisterHotkey
 學習windows的RegisterHotkey與控制視窗的結合
+目前缺點:無法在遊戲全屏時運作、視窗名稱取得不易
